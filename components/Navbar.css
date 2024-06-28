@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  padding: 14px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: 	black;
+  z-index: 1;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 60px;
+}
+.crypto {
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+
+}
+
+nav ul li a:hover {
+  background-color: rgb(153, 150, 150);
+}
+
+
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+}
+
+.selecti{
+  width: 40px;
+  align-items: center;
+  gap: (1vw, 12px);
+  display: flex;
+}
+
+.selecti select{
+  padding: 3px 4px;
+  border-radius: 6px;
+  color: black;
+  background: rgb(129, 124, 124);
+  border: 1px solid white;
+  margin-left: 10px;
+}
+
+/* .home{
+  font-family: 'Times New Roman', Times, serif;
+} */
+
