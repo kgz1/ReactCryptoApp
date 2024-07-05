@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom'
 const HomePage = () => {
 
   const [coins, setCoins] = useState([])
-  const [coinSearch, setcoinSearch] = useState([])
- 
+  const [allCoins, setAllCoins] = useState([])
 
   const options = {
     method: 'GET',
@@ -24,26 +23,23 @@ const HomePage = () => {
       offset: '0'
     },
     headers: {
-      'x-rapidapi-key': '839ef3eb46msh8f5f70a8d3ae76cp16a47fjsnec2af6bcb164',
+      'x-rapidapi-key':  import.meta.env.VITE_KEY,
       'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
     }
   };
   
-
   useEffect(() => {
     axios.request(options).then((response) => {
         setCoins(response.data.data.coins)
+        setAllCoins(response.data.data.coins)
     }).catch(err => console.log(err))
 }, [])
 
-function refreshPage(){ 
-  window.location.reload(); 
-}
-
+console.log(coins)
 
 const SearchCoin = (e) => {
- const filteredData = coins.filter(c => c.name.toLowerCase().includes(e.toLowerCase()))
-setCoins(filteredData)
+  const filteredData = allCoins.filter(c => c.name.toLowerCase().includes(e.toLowerCase()))
+  setCoins(filteredData)
 }
 
   return (
@@ -54,7 +50,6 @@ setCoins(filteredData)
           <p className='paragraph'>Welcome to the world's largest cryptocurrency marketplace. Sign up to explore more about cryptos.
           <input type='text' placeholder='Search Cryptocurrency' className='searchinput' onChange={e => SearchCoin(e.target.value)}></input>
           </p>
-          <button type="button" className='butoni' onClick={ refreshPage }><span>Reload</span></button> 
           <div className='marketplace'>
           {
   coins.map((currency, index) => (
